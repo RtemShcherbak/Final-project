@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  backend:
+    image: back:1
+    container_name: backend
+    networks:
+      - project_network
+    volumes:
+      - ./finetuned_model:/app/finetuned_model:ro
+      - ./templates:/app/templates:ro
+      - ./templates:/app/static:ro
+    ports:
+      - 8000:8000
+
+
+networks:
+  project_network:
+    name: project_network
