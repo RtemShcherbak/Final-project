@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Главная страница
+{% endblock %}
+
+{% block content %}
+    <form method="post">
+        <div class="wrapper">
+            <textarea type="text" name="context" class="textarea_context" placeholder="Введите контекст">{{ context }}</textarea><br>
+            <textarea type="text" name="question" class="textarea_question" placeholder="Введите вопрос">{{ question }}</textarea><br>
+            <div class="row justify-content-center">
+                <button class="btn btn-primary" type="submit">Ответить</button>
+            </div>
+        </div>
+    </form>
+    <textarea type="text" name="answer" class="textarea_answer" placeholder="Ответ">{{ answer }}</textarea>
+{% endblock %}

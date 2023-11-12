@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+
+<body>
+    <div class="page">
+
+        <!--- <header class="d-flex py-3 bg-dark text-white">
+            <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                <li><a href="{{ url_for('index') }}" class="nav-link px-5 text-secondary">Model</a></li>
+                <li><a href="{{ url_for('about') }}" class="nav-link px-5 text-white">About me</a></li>
+            </ul>
+          </header>--->
+
+        <header class="d-flex bg-dark text-white justify-content-center py-3">
+            <ul class="nav nav-pills">
+                <li class="nav-item"><a href="{{ url_for('index') }}" class="nav-link active" aria-current="page">Model</a></li>
+                <li class="nav-item"><a href="{{ url_for('about') }}" class="nav-link">About me</a></li>
+            </ul>
+        </header>
+
+        <content class="d-flex   justify-content-center  py-3 mb-4">
+            <div class="content" >{% block content %}{% endblock %}</div>
+        </content>    
+
+        <footer class="mt-5" style="background-color: hsl(0, 0%, 60%); ">
+            <div class="container py-2">                
+                <div class="text-center">
+                    <!---<p class="art">Artem Shcherbak</p>--->
+                    Artem Shcherbak
+                </div>
+            </div>
+            <div class="text-center p-1" style="background-color: hsl(0, 0%, 40%);">
+                © 2023
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
